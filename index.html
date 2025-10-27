@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: The Vijayalakshmi Healing Centre</title>
+    <!-- CRITICAL: Ensures Tailwind CSS loads with HTTPS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FIX: Using Chart.js V2.9.4 for maximum browser compatibility -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #4A4A4A;
+        }
+        /* Define colors for text, not for background, as background is now inline in footer */
+        .brand-gold { color: #D4AF37; }
+        .brand-navy { color: #192A51; }
+        .bg-brand-gold { background-color: #D4AF37; }
+        
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Material Card Styling */
+        .material-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .material-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px); 
+        }
+
+        /* Chart Container for responsiveness */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px; 
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; 
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px; 
+            }
+        }
+
+        #service-info-text {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Mobile vs Desktop Arrows for Process Flow */
+        .process-arrow { display: none; }
+        .process-arrow-mobile {
+            display: block;
+            font-size: 2rem;
+            line-height: 1;
+            margin: 0.5rem 0;
+            color: #D4AF37;
+        }
+        @media (min-width: 768px) {
+            .process-arrow {
+                display: block; 
+                font-size: 2rem;
+                color: #D4AF37;
+            }
+            .process-arrow-mobile { display: none; }
+        }
+    </style>
+    <!-- Loading Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+    /* ------------------------------------ */
+    /* 1. BUTTON STYLING (The Look)         */
+    /* ------------------------------------ */
+    .whatsapp-button {
+      text-decoration: none; /* Removes the underline */
+      display: inline-block; /* Allows us to set padding/margin */
+      
+      background-color: #061778; /* WhatsApp Green */
+      color: white; /* White text */
+      padding: 10px 20px; /* Space inside the button */
+      border-radius: 5px; /* Rounded corners */
+      font-weight: bold;
+      font-size: 1.1em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease; /* Smooth color change on hover */
+    }
+
+    .whatsapp-button:hover {
+      background-color: #128c7e; /* Darker green when you hover */
+    }
+
+    /* ------------------------------------ */
+    /* 2. ALIGNMENT (The Position)          */
+    /* ------------------------------------ */
+    .button-container {
+      text-align: center; /* This centers the button horizontally */
+      margin: 30px 0; /* Adds space above and below the button */
+    }
+</style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <header class="text-center mb-10 md:mb-16">
+            <!-- LOGO INTEGRATION: Uses your actual file name -->
+            <!-- START NEW CONTAINER -->
+    <div class="h-24 w-24 md:h-32 md:w-32 mx-auto mb-4 
+                rounded-full 
+                border-2 amber-200 border-amber-200 shadow-md 
+                overflow-hidden flex items-center justify-center">
+        
+        <img src="./vhc logo.jpeg" 
+             alt="Vijayalakshmi Healing Centre Logo" 
+             class="h-full w-full object-cover scale-125 rounded-full">
+    </div>
+    <!-- END NEW CONTAINER -->
+            <h1 class="text-3xl md:text-5xl font-bold brand-navy">The Science of Spirit</h1>
+            <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto">An infographic on the Vijayalakshmi Healing Centre's unique approach, bridging spiritual healing with parapsychological research.</p>
+        </header>
+
+        <section id="founder" class="mb-12 md:mb-16">
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center">
+                <div class="md:col-span-1 text-center material-card p-6 md:p-8">
+                    <!-- Placeholder Founder Photo -->
+                    <img src="https://placehold.co/160x160/192A51/FFFFFF?text=Founder" alt="Mrs. Vijayalakshmi, Founder" class="rounded-full w-32 h-32 md:w-40 md:h-40 mx-auto shadow-xl border-4 border-amber-100">
+                     <h2 class="text-2xl md:text-3xl brand-navy mt-4">Mrs. Vijayalakshmi</h2>
+                     <p class="font-semibold brand-gold text-base md:text-lg">Spiritual Scientist & Parapsychologist</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-1 gap-6">
+                    <div class="material-card">
+                        <h3 class="text-xl font-bold brand-navy mb-2">Academic Excellence</h3>
+                        <p>Holds a Master's degree in Healing, with foundational studies completed at YMC, establishing a strong theoretical background.</p>
+                    </div>
+                     <div class="material-card">
+                        <h3 class="text-xl font-bold brand-navy mb-2">Research & Science</h3>
+                        <p>Currently a Spiritual Scientist and Researcher at ORDP Chennai, ensuring all methods are informed by ongoing scientific inquiry.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="button-container">
+    <a 
+        href="https://wa.me/919790255833?text=Hi,I would like to book a consultation." 
+        target="_blank" 
+        class="whatsapp-button"
+    >
+        Book A Consultation
+    </a>
+</div>
+
+        <section id="services" class="text-center mb-12 md:mb-16">
+            <h2 class="text-2xl md:text-4xl font-bold brand-navy mb-4">The Six Pillars of Transformation</h2>
+            <p class="max-w-3xl mx-auto mb-8 text-base md:text-lg">The Centre’s philosophy is built on six interconnected pillars of healing. Hover over a segment of the chart (or tap on mobile) to explore each specialized service and understand its unique purpose.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="chart-container">
+                    <canvas id="servicesChart"></canvas>
+                </div>
+                <div id="service-info" class="material-card text-left min-h-[300px] flex flex-col justify-center p-6">
+                    <h3 id="service-info-title" class="text-xl md:text-2xl font-bold brand-navy mb-3">Our Holistic Approach</h3>
+                    <p id="service-info-text" class="text-base md:text-lg">Our services work in synergy. The mind is supported through counselling, the emotions are balanced with vibrational medicine, and the spirit is aligned with cosmic and intuitive guidance.</p>
+                </div>
+            </div>
+        </section>
+        
+  <section id="journey" class="text-center mb-12 md:mb-16">
+            <h2 class="text-2xl md:text-4xl font-bold brand-navy mb-4">Your Healing Journey</h2>
+            <p class="max-w-3xl mx-auto mb-8 text-base md:text-lg">We provide a clear, supportive, and structured path for every client, ensuring a personalized and effective experience from start to finish.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <div class="material-card w-full md:w-1/4 text-center p-4">
+                    <p class="text-2xl font-bold brand-gold">1</p>
+                    <h3 class="text-lg font-bold brand-navy">Consultation</h3>
+                    <p class="text-sm">A deep-dive session to understand your unique needs.</p>
+                </div>
+                <div class="process-arrow-mobile">↓</div>
+                <div class="process-arrow transform md:-translate-y-4">→</div>
+                
+                <div class="material-card w-full md:w-1/4 text-center p-4">
+                    <p class="text-2xl font-bold brand-gold">2</p>
+                    <h3 class="text-lg font-bold brand-navy">Personalized Plan</h3>
+                    <p class="text-sm">Creating a tailored strategy using our six pillars.</p>
+                </div>
+                <div class="process-arrow-mobile">↓</div>
+                <div class="process-arrow transform md:-translate-y-4">→</div>
+                
+                 <div class="material-card w-full md:w-1/4 text-center p-4">
+                    <p class="text-2xl font-bold brand-gold">3</p>
+                    <h3 class="text-lg font-bold brand-navy">Healing Sessions</h3>
+                    <p class="text-sm">Implementing the plan with dedicated one-on-one sessions.</p>
+                </div>
+                 <div class="process-arrow-mobile">↓</div>
+                 <div class="process-arrow transform md:-translate-y-4">→</div>
+                 
+                 <div class="material-card w-full md:w-1/4 text-center p-4">
+                    <p class="text-2xl font-bold brand-gold">4</p>
+                    <h3 class="text-lg font-bold brand-navy">Ongoing Support</h3>
+                    <p class="text-sm">Ensuring lasting change and continued well-being.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER: FORCED INLINE STYLES FOR MAXIMUM COMPATIBILITY -->
+        <footer id="contact" 
+            class="material-card text-white text-center p-8 md:p-10" 
+            style="background-color: #192A51;">
+             <h2 class="text-2xl md:text-3xl font-bold mb-4">Begin Your Journey Today</h2>
+             <p class="mb-6 text-base md:text-lg">Schedule a consultation to discover your personalized path to healing.</p>
+             <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-12 text-sm md:text-base">
+                <div class="mt-2">
+                    <h4 class="font-bold text-amber-300">📍 Location</h4>
+                    <p>No:3, Second Cross, Balaji Nagar, New Saram, Pondicherry 605013</p>
+                </div>
+                <div class="mt-2">
+                    <h4 class="font-bold text-amber-300">📞 Phone</h4>
+                    <p>+91 9790255833</p>
+                </div>
+                <div class="mt-2">
+                    <h4 class="font-bold text-amber-300">📸 Instagram</h4>
+                    <p>@vijayalakshmihealingcentre</p>
+                </div>
+             </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data for the services chart
+        const servicesData = [
+            { label: 'Counselling', description: 'Provides a safe, confidential space to address trauma, stress, anxiety, and personal growth challenges using established therapeutic techniques to manage the conscious mind.' },
+            { label: 'Flower Medicine', description: 'Utilizes the subtle energy of flower essences to harmonize negative emotional states and belief patterns, supporting the body’s innate healing capabilities on a vibrational level.' },
+            { label: ['Astrology Infused', 'Healing'], description: 'Uses the client’s natal chart as a diagnostic tool. Healing is tailored to address planetary imbalances and energetic blockages revealed by celestial alignments for proactive energy management.' },
+            { label: 'Reiki & Psychic Healing', description: 'A hands-on healing technique to promote deep relaxation by channeling "life force energy." It is highly effective for stress reduction, pain management, and balancing the chakras.' },
+            { label: 'Tarot Reading', description: 'Intuitive readings that offer profound clarity, helping clients understand current paths, potential futures, and hidden influences. This is often paired with healing for soul-level contracts.' },
+            { label: ['Paranormal Case', 'Resolution'], description: 'A unique service applying scientific Parapsychology to analyze phenomena, seeking natural explanations first, before resolving negative energies or attachments.' },
+        ];
+
+        const serviceInfoTitle = document.getElementById('service-info-title');
+        const serviceInfoText = document.getElementById('service-info-text');
+
+        // Initialize Chart.js when the window loads
+        window.onload = function() {
+            try {
+                const ctx = document.getElementById('servicesChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: servicesData.map(s => Array.isArray(s.label) ? s.label.join(' ') : s.label),
+                        datasets: [{
+                            label: 'Services',
+                            data: [1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(212, 175, 55, 0.7)',
+                                'rgba(242, 201, 76, 0.7)',
+                                'rgba(25, 42, 81, 0.7)',
+                                'rgba(111, 126, 163, 0.7)',
+                                'rgba(235, 216, 137, 0.7)',
+                                'rgba(82, 94, 122, 0.7)'
+                            ],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 3,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutoutPercentage: 60, // Old syntax for older Chart.js
+                        legend: {
+                            position: 'bottom',
+                            labels: { padding: 15, fontSize: 12 }
+                        },
+                        tooltips: { // Old syntax for older Chart.js
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    return servicesData[tooltipItems[0].index].label.join(' ');
+                                },
+                                label: function(tooltipItem, data) {
+                                    return 'Hover/Tap to learn more';
+                                }
+                            }
+                        },
+                        // Custom logic for hover interaction to update the text box
+                        onHover: (event, chartElement) => {
+                            if (chartElement.length) {
+                                const index = chartElement[0]._index; // Old index property
+                                const data = servicesData[index];
+                                let title = Array.isArray(data.label) ? data.label.join(' ') : data.label;
+
+                                serviceInfoText.style.opacity = 0;
+                                setTimeout(() => {
+                                    serviceInfoTitle.textContent = title;
+                                    serviceInfoText.textContent = data.description;
+                                    serviceInfoText.style.opacity = 1;
+                                }, 150);
+                            } 
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Failed to initialize chart:", error);
+                // Fallback text if chart initialization fails
+                const chartContainer = document.querySelector('.chart-container');
+                if (chartContainer) {
+                    chartContainer.innerHTML = '<p class="text-red-500 p-4">Error loading chart. Please check your internet connection and try reloading.</p>';
+                }
+            }
+        };
+    </script>
+</body>
+</html>
